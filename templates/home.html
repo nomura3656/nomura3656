@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>商品登録</title>
+</head>
+<body>
+    <h1>商品登録フォーム</h1>
+
+    <form method="POST" action="{% url 'add_product' %}">
+        {% csrf_token %}
+        <label for="product_name">商品名:</label><br>
+        <input type="text" id="product_name" name="product_name" required><br>
+        
+        <label for="price">値段:</label><br>
+        <input type="number" id="price" name="price" required><br>
+
+        <label for="release_date">発売日:</label><br>
+        <input type="date" id="release_date" name="release_date" required><br>
+
+        <label for="description">商品の説明:</label><br>
+        <textarea id="description" name="description" rows="4" cols="50" required></textarea><br>
+
+        <label for="image_url">商品画像のURL:</label><br>
+        <input type="url" id="image_url" name="image_url" required><br>
+
+        <input type="submit" value="登録">
+    </form>
+</body>
+</html>
